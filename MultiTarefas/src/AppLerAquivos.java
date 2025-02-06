@@ -134,6 +134,8 @@ public class AppLerAquivos extends JFrame {
                         gui.textArea.setText("");
                         gui.LerArquivosSimultaneo("./arquivo1.txt", "./arquivo2.txt");
 
+                        
+
                     }
                 });
                 gui.setVisible(true);
