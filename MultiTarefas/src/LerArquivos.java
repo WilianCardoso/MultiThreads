@@ -33,7 +33,10 @@ public class LerArquivos implements Runnable {
     public void run() {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
+
             while ((line = reader.readLine()) != null) {
+                lineRead++;
+                final int progressoAtual = (int) (((double) lineRead / totalLinhas) * 100);
                 final String currentLine = line;
                 SwingUtilities.invokeLater(new Runnable() {
                     @Override
@@ -41,9 +44,15 @@ public class LerArquivos implements Runnable {
                         synchronized (textArea) {
                             textArea.append(currentLine + "\n");
                         }
+                        // Atualiza a barra de progesso
+                        progressBar.setValue(progressoAtual); // Atualiza a barra de progresso
+
+                        // Atualiza o JTextField com a linha que está sendo lida
+                        texto.setText(currentLine);
                     }
                 });
-                Thread.sleep(1000); // Espera 1 segundo antes de ler a próxima linha
+                Thread.sleep(tempo); 
+                
             }
         } catch (IOException e) {
             showError("Erro ao ler o arquivo: " + e.getMessage());
