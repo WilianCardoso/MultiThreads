@@ -133,8 +133,8 @@ public class AppLerAquivos extends JFrame {
                     public void actionPerformed(ActionEvent e) {
                         gui.textArea.setText("");
                         gui.LerArquivosSimultaneo(
-                                "C:\\Users\\wilian_g_cardoso\\Documents\\GitHub\\MultiThreads\\MultiTarefas/arquivo1.txt",
-                                "C:\\Users\\wilian_g_cardoso\\Documents\\GitHub\\MultiThreads\\MultiTarefas/arquivo2.txt");
+                                "C:\\Users\\cardo\\OneDrive\\Documentos\\GitHub\\MultiThreads\\MultiTarefas/arquivo1.txt",
+                                "C:\\Users\\cardo\\OneDrive\\Documentos\\GitHub\\MultiThreads\\MultiTarefas/arquivo2.txt");
 
                     }
                 });

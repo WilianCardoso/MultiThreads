@@ -44,21 +44,22 @@ public class LerArquivos implements Runnable {
                         synchronized (textArea) {
                             textArea.append(currentLine + "\n");
                         }
-                        // Atualiza a barra de progesso
+                  
                         progressBar.setValue(progressoAtual); // Atualiza a barra de progresso
 
-                        // Atualiza o JTextField com a linha que está sendo lida
-                        texto.setText(currentLine);
+                        
+                        texto.setText(currentLine); // Atualiza o JTextField com a linha que está sendo lida
                     }
                 });
-                Thread.sleep(tempo); 
-                
+                Thread.sleep(tempo);
+
             }
         } catch (IOException e) {
             showError("Erro ao ler o arquivo: " + e.getMessage());
         } catch (InterruptedException e) {
             showError("A leitura do arquivo foi interrompida: " + e.getMessage());
         }
+        JOptionPane.showMessageDialog(null, "Leitura concluída!!!");
     }
 
     private int contaTotalLinhas(String filePath) {
