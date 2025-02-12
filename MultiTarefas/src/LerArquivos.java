@@ -18,7 +18,6 @@ public class LerArquivos implements Runnable {
     private final int totalLinhas;
     private final JProgressBar progressBar;
     private int lineRead;
-    int progresso;
 
     public LerArquivos(String filePath, JTextArea textArea, JTextField text, int tempo, JProgressBar progress) {
         this.filePath = filePath;
@@ -44,10 +43,9 @@ public class LerArquivos implements Runnable {
                         synchronized (textArea) {
                             textArea.append(currentLine + "\n");
                         }
-                  
+
                         progressBar.setValue(progressoAtual); // Atualiza a barra de progresso
 
-                        
                         texto.setText(currentLine); // Atualiza o JTextField com a linha que está sendo lida
                     }
                 });
